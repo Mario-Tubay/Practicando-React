@@ -4,11 +4,13 @@ const Servicios = ({ peticion }) => {
 
     const [data, error] = useFetch(peticion);
 
-    if(!data){
-        return <span>No hay servicios</span>
-    }
+    console.log(data)
+    console.log(error)
     if(error){
         <h1>Error Servicios</h1>
+    }
+    if(!data || data.length == 0){
+        return <span>No hay servicios</span>
     }
     return  (
         <div className="ed-grid">
